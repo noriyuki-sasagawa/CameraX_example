@@ -87,6 +87,11 @@ class MainFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        CameraX.unbindAll()
+        super.onDestroyView()
+    }
+
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<String>, grantResults: IntArray
     ) {
